@@ -1,4 +1,4 @@
-name: Deploy Jekyll site
+name: Deploy Jekyll site to Pages
 
 on:
   push:
@@ -24,22 +24,21 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3'
-          bundler-cache: true
+          ruby-version: '3.3' # Uses a modern Ruby version
+          bundler-cache: true # Runs 'bundle install' automatically
 
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --destination ./_site
         env:
           JEKYLL_ENV: production
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "_site"
+          path: ./_site
 
   deploy:
     environment:
