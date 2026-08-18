@@ -11,16 +11,16 @@ title: Home
 
 <section class="project-list">
   {% for project in site.projects %}
-  <div class="project-row">
+  <a class="project-row" href="{{ project.url | relative_url }}">
     <div class="project-info">
       <h2>{{ project.title }}</h2>
       <p class="date">{{ project.date_display }}</p>
       <p class="desc">{{ project.description }}</p>
       <p class="tags">{{ project.tags | join: "   " }}</p>
     </div>
-    <a class="project-image" href="{{ project.url | relative_url }}">
+    <div class="project-image">
       <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
-    </a>
-  </div>
+    </div>
+  </a>
   {% endfor %}
 </section>

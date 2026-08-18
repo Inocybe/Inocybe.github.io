@@ -13,7 +13,14 @@ layout: default
   {% if next_index >= projects.size %}{% assign next_index = 0 %}{% endif %}
   {% assign next_project = projects[next_index] %}
 
-  <a class="next-link" href="{{ next_project.url | relative_url }}">{{ next_project.title }} →</a>
+  {% assign prev_index = current_index | minus: 1 %}
+  {% if prev_index < 0 %}{% assign prev_index = projects.size | minus: 1 %}{% endif %}
+  {% assign prev_project = projects[prev_index] %}  
+
+  <div class="nav-arrows">
+    <a class="nav-arrow" href="{{ prev_project.url | relative_url }}">← {{ prev_project.title }}</a>
+    <a class="nav-arrow" href="{{ next_project.url | relative_url }}">{{ next_project.title }} →</a>
+  </div>
 </nav>
 
 <img class="project-hero" src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}">

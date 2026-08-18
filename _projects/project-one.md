@@ -10,3 +10,11 @@ trailer_url: https://www.youtube.com/watch?v=Guf5HoArrxU
 ---
 
 This is a test for the wrightup, curerntly no informaiton here.
+
+
+
+# PICUTRE
+![Picture of Mt. Hood](https://www.mattpaynephotography.com/images/xl/Glorious-Mount-Hood-at-Sunset.jpg)
+
+
+More text to see if it appears
