@@ -19,7 +19,14 @@ title: Home
       <p class="tags">{{ project.tags | join: "   " }}</p>
     </div>
     <div class="project-image">
-      <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+      {% if project.thumbnail %}
+        <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+      {% elsif project.placeholder %}
+        <video poster="{{ project.placeholder | relative_url }}" preload="auto" autoplay muted playsinline loop>
+          <source src="{{ project.tiny-video | relative_url }}" type="video/mp4">
+        </video>
+      {% endif%}
+
     </div>
   </a>
   {% endfor %}
