@@ -14,7 +14,6 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
   line-height: 1.65;
@@ -23,6 +22,47 @@ body {
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; display: block; }
+
+
+/* ---- Parallax background ---- */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-color: var(--bg);
+  pointer-events: none; /* never blocks clicks/scroll */
+}
+
+.bg-mountain {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 160%);        /* TUNE: how wide the photo spans */
+  height: 70vh;                    /* TUNE: how tall the mountain area is */
+  background-image: url('/assets/img/mt-hood.jpg');
+  background-size: cover;
+  background-position: center 30%; /* TUNE: shifts the crop up/down within the photo */
+  opacity: 0.35;                   /* TUNE: 0 = invisible, 1 = full photo */
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at center 20%, black 40%, transparent 85%);
+  mask-image: radial-gradient(ellipse 70% 60% at center 20%, black 40%, transparent 85%);
+}
+
+.bg-trees {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45vh;                    /* TUNE: how tall the treeline is */
+  background-image: url('/assets/img/treeline.png');
+  background-repeat: repeat-x;     /* tiles horizontally across full width */
+  background-position: bottom center;
+  background-size: auto 100%;
+  opacity: 0.9;                    /* TUNE: treeline visibility */
+  will-change: transform;
+}
+
 
 /* ---- Hero ---- */
 .hero {
@@ -43,6 +83,7 @@ img { max-width: 100%; display: block; }
 .hero-inner { position: relative; z-index: 1; }
 .hero h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; }
 .hero p { color: var(--text-muted); font-size: 1.15rem; margin-top: 1rem; }
+.hero, .project-list, .site-footer { position: relative; z-index: 1; } /* ensures content is above the parallax background */
 
 /* ---- Homepage project list ---- */
 .project-list { max-width: 900px; margin: 0 auto; padding: 1rem 2rem 4rem; }
@@ -234,6 +275,9 @@ a.project-row:hover { text-decoration: none; }
   .project-content, .page-content { padding: 2.5rem 1.25rem 3.5rem; }
   .img-row { grid-template-columns: 1fr; }
   .project-content img.full-bleed { max-height: 320px; }
+
+  .bg-mountain { height: 50vh; opacity: 0.25; }
+  .bg-trees { height: 35vh; }
 }
 
 @media (prefers-reduced-motion: reduce) {
