@@ -31,15 +31,15 @@
   if (!trees || !mountain) return;
 
   const preferseReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 760px)').matches;
 
   const TREE_START_OFFSET = 50;  // TUNE: % hidden below the fold at rest (0 = fully visible immediately)
   const TREE_MAX_RISE = 300;     // TUNE: px of scroll needed to fully reveal the trees
   const TREE_RISE_SPEED = 0.7;   // TUNE: 0 = trees stay perfectly still; higher = more drift
   const MOUNTAIN_SPEED = 0.08;   // TUNE: 0 = mountain stays perfectly still; higher = more drift
 
-  if (preferseReducedMotion) {
+  if (preferseReducedMotion || isMobile) {
     // If the user has motion-reduction on, just show the trees and don't move the mountain.
-    trees.style.transform = 'translateY(0)';
     return;
   }
 

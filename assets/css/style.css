@@ -34,33 +34,39 @@ img { max-width: 100%; display: block; }
   pointer-events: none; /* never blocks clicks/scroll */
 }
 
-.bg-mountain {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;                    /* always full width, no more centered/capped box */
-  height: 85vh;                    /* TUNE: taller box gives the fade more room to work */
-  background-image: url('/assets/img/mt-hood.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;    /* belt-and-suspenders, prevents any tiling */
-  background-position: center 30%; /* TUNE: shifts crop within the photo */
-  opacity: 0.25;                   /* TUNE: overall visibility */
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 90%);
-  mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 90%);
-}
+.bg-mountain, .bg-trees { display: none; }
 
-.bg-trees {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 65vh;                    /* TUNE: how tall the treeline is */
-  background-image: url('/assets/img/treeline.png');
-  background-repeat: repeat-x;     /* tiles horizontally across full width */
-  background-position: bottom center;
-  background-size: auto 100%;
-  opacity: 0.40;                    /* TUNE: treeline visibility */
-  will-change: transform;
+
+/* ---- Desktop ---- */
+@media (min-width: 761px) {
+  .bg-mountain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;                    /* always full width, no more centered/capped box */
+    height: 85vh;                    /* TUNE: taller box gives the fade more room to work */
+    background-image: url('/assets/img/mt-hood.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;    /* belt-and-suspenders, prevents any tiling */
+    background-position: center 30%; /* TUNE: shifts crop within the photo */
+    opacity: 0.25;                   /* TUNE: overall visibility */
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 90%);
+    mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 90%);
+  }
+
+  .bg-trees {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 65vh;                    /* TUNE: how tall the treeline is */
+    background-image: url('/assets/img/treeline.png');
+    background-repeat: repeat-x;     /* tiles horizontally across full width */
+    background-position: bottom center;
+    background-size: auto 100%;
+    opacity: 0.40;                    /* TUNE: treeline visibility */
+    will-change: transform;
+  }
 }
 
 
@@ -275,9 +281,6 @@ a.project-row:hover { text-decoration: none; }
   .project-content, .page-content { padding: 2.5rem 1.25rem 3.5rem; }
   .img-row { grid-template-columns: 1fr; }
   .project-content img.full-bleed { max-height: 320px; }
-
-  .bg-mountain { height: 50vh; opacity: 0.25; }
-  .bg-trees { height: 35vh; }
 }
 
 @media (prefers-reduced-motion: reduce) {
