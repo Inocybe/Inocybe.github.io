@@ -33,7 +33,8 @@
   const preferseReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const TREE_START_OFFSET = 60;  // TUNE: % hidden below the fold at rest (0 = fully visible immediately)
-  const TREE_MAX_RISE = 400;     // TUNE: px of scroll needed to fully reveal the trees
+  const TREE_MAX_RISE = 300;     // TUNE: px of scroll needed to fully reveal the trees
+  const TREE_RISE_SPEED = 0.7;   // TUNE: 0 = trees stay perfectly still; higher = more drift
   const MOUNTAIN_SPEED = 0.08;   // TUNE: 0 = mountain stays perfectly still; higher = more drift
 
   if (preferseReducedMotion) {
@@ -45,12 +46,12 @@
   let ticking = false;
 
   function update() {
-    const progress = Math.min(window.scrollY / TREE_MAX_RISE, 1);
+    const progress = Math.min(window.scrollY / TREE_MAX_RISE * TREE_RISE_SPEED, 1);
     const treeOffset = (1 - progress) * TREE_START_OFFSET;
     trees.style.transform = `translateY(${treeOffset}%)`;
     
     if (mountain) {
-      mountain.style.transform = `translateY(-50%, ${-(window.scrollY * MOUNTAIN_SPEED)}px)`;
+      mountain.style.transform = `translateY(${-(window.scrollY * MOUNTAIN_SPEED)}px)`;
     }
     ticking = false;
   }

@@ -37,16 +37,16 @@ img { max-width: 100%; display: block; }
 .bg-mountain {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1400px, 160%);        /* TUNE: how wide the photo spans */
-  height: 70vh;                    /* TUNE: how tall the mountain area is */
+  left: 0;
+  width: 100vw;                    /* always full width, no more centered/capped box */
+  height: 85vh;                    /* TUNE: taller box gives the fade more room to work */
   background-image: url('/assets/img/mt-hood.jpg');
   background-size: cover;
-  background-position: center 30%; /* TUNE: shifts the crop up/down within the photo */
-  opacity: 0.35;                   /* TUNE: 0 = invisible, 1 = full photo */
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at center 20%, black 40%, transparent 85%);
-  mask-image: radial-gradient(ellipse 70% 60% at center 20%, black 40%, transparent 85%);
+  background-repeat: no-repeat;    /* belt-and-suspenders, prevents any tiling */
+  background-position: center 30%; /* TUNE: shifts crop within the photo */
+  opacity: 0.25;                   /* TUNE: overall visibility */
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 90%);
 }
 
 .bg-trees {
@@ -59,7 +59,7 @@ img { max-width: 100%; display: block; }
   background-repeat: repeat-x;     /* tiles horizontally across full width */
   background-position: bottom center;
   background-size: auto 100%;
-  opacity: 0.9;                    /* TUNE: treeline visibility */
+  opacity: 0.40;                    /* TUNE: treeline visibility */
   will-change: transform;
 }
 
@@ -69,15 +69,15 @@ img { max-width: 100%; display: block; }
   position: relative;
   text-align: center;
   padding: 7rem 1.5rem 4.5rem;
-  background-image: radial-gradient(var(--border) 1px, transparent 1px);
-  background-size: 28px 28px;
+  /*background-image: radial-gradient(var(--border) 1px, transparent 1px);*/
+  /*background-size: 28px 28px;*/
   overflow: hidden;
 }
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, var(--bg) 100%);
+  /*background: linear-gradient(to bottom, transparent 40%, var(--bg) 100%);*/
   pointer-events: none;
 }
 .hero-inner { position: relative; z-index: 1; }
