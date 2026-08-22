@@ -38,8 +38,9 @@ img { max-width: 100%; display: block; }
 
 
 /* ---- Desktop ---- */
-@media (min-width: 761px) {
+@media (min-width: 760px) {
   .bg-mountain {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -55,6 +56,7 @@ img { max-width: 100%; display: block; }
   }
 
   .bg-trees {
+    display: block;
     position: absolute;
     left: 0;
     right: 0;
