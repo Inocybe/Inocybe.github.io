@@ -31,7 +31,7 @@ img { max-width: 100%; display: block; }
   z-index: 0;
   overflow: hidden;
   background-color: var(--bg);
-  pointer-events: none; /* never blocks clicks/scroll */
+  pointer-events: none;
 }
 
 .bg-mountain, .bg-trees { display: none; }
@@ -44,13 +44,13 @@ img { max-width: 100%; display: block; }
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;                    /* always full width, no more centered/capped box */
-    height: 85vh;                    /* TUNE: taller box gives the fade more room to work */
+    width: 100vw;                    
+    height: 85vh;                  
     background-image: url('/assets/img/mt-hood.jpg');
     background-size: cover;
-    background-repeat: no-repeat;    /* belt-and-suspenders, prevents any tiling */
-    background-position: center 30%; /* TUNE: shifts crop within the photo */
-    opacity: 0.25;                   /* TUNE: overall visibility */
+    background-repeat: no-repeat;    
+    background-position: center 30%; 
+    opacity: 0.25;                   
     -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 90%);
     mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 90%);
   }
@@ -61,12 +61,12 @@ img { max-width: 100%; display: block; }
     left: 0;
     right: 0;
     bottom: 0;
-    height: 65vh;                    /* TUNE: how tall the treeline is */
+    height: 65vh;                    
     background-image: url('/assets/img/treeline.png');
-    background-repeat: repeat-x;     /* tiles horizontally across full width */
+    background-repeat: repeat-x;     
     background-position: bottom center;
     background-size: auto 100%;
-    opacity: 0.40;                    /* TUNE: treeline visibility */
+    opacity: 0.40;                   
     will-change: transform;
   }
 }
@@ -225,7 +225,6 @@ a.project-row:hover { text-decoration: none; }
 .project-content h2:first-child { margin-top: 0; }
 .project-content p { margin-bottom: 1.25rem; color: #d6d6d4; }
 
-/* images embedded mid-writeup — three patterns, see markdown examples below */
 .project-content img {
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -273,7 +272,6 @@ a.project-row:hover { text-decoration: none; }
   .hero { padding: 4.5rem 1.25rem 3rem; }
   .project-list { padding: 0.5rem 1.25rem 3rem; }
   
-  /* Added some horizontal padding so the hover highlight box has breathing room */
   .project-row { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 1.25rem; }
   
   .project-nav { padding: 1rem 1.25rem; }
