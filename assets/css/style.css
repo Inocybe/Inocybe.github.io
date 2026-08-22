@@ -11,7 +11,7 @@
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background-color: var(--bg); }
 
 body {
   color: var(--text);
@@ -54,7 +54,7 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   bottom: 0;
-  height: 45vh;                    /* TUNE: how tall the treeline is */
+  height: 65vh;                    /* TUNE: how tall the treeline is */
   background-image: url('/assets/img/treeline.png');
   background-repeat: repeat-x;     /* tiles horizontally across full width */
   background-position: bottom center;

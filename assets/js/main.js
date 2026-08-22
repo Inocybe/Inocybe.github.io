@@ -32,7 +32,7 @@
 
   const preferseReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const TREE_START_OFFSET = 60;  // TUNE: % hidden below the fold at rest (0 = fully visible immediately)
+  const TREE_START_OFFSET = 50;  // TUNE: % hidden below the fold at rest (0 = fully visible immediately)
   const TREE_MAX_RISE = 300;     // TUNE: px of scroll needed to fully reveal the trees
   const TREE_RISE_SPEED = 0.7;   // TUNE: 0 = trees stay perfectly still; higher = more drift
   const MOUNTAIN_SPEED = 0.08;   // TUNE: 0 = mountain stays perfectly still; higher = more drift
