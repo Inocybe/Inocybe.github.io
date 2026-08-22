@@ -46,7 +46,7 @@ img { max-width: 100%; display: block; }
     left: 0;
     width: 100vw;                    
     height: 85vh;                  
-    background-image: url('/assets/img/mt-hood.jpg');
+    background-image: url('/assets/img/mt-hood.avif');
     background-size: cover;
     background-repeat: no-repeat;    
     background-position: center 30%; 
@@ -62,7 +62,7 @@ img { max-width: 100%; display: block; }
     right: 0;
     bottom: 0;
     height: 65vh;                    
-    background-image: url('/assets/img/treeline.png');
+    background-image: url('/assets/img/treeline.avif');
     background-repeat: repeat-x;     
     background-position: bottom center;
     background-size: auto 100%;

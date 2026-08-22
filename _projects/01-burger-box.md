@@ -4,7 +4,7 @@ title: Burger Box
 date_display: 2024 - 2025
 description: A VR and desktop cooking game, where you have to manage food, orders, and weather. Built in Godot for a statewide competition.
 tags: [Godot, GDScript, VR]
-placeholder: /assets/img/burger-box-place-holder.png
+placeholder: /assets/img/burger-box-place-holder.avif
 tiny-video: /assets/videos/burger-box-tiny.mp4
 small-video: /assets/videos/burger-box-compressed.mp4
 official_url: https://github.com/Inocybe/cooking-game
