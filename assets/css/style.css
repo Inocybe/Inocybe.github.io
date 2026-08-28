@@ -263,9 +263,17 @@ a.project-row:hover { text-decoration: none; }
 /* ---- Footer ---- */
 .site-footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; }
 .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
-.footer-links a { color: var(--text-muted); font-size: 0.9rem; }
+.footer-links a { color: var(--text); font-size: 1rem; }
 .footer-links a:hover { color: var(--accent); }
-.footer-copy { color: var(--text-muted); font-size: 0.8rem; font-family: var(--font-mono); }
+.footer-copy { color: var(--text); font-size: 0.8rem; font-family: var(--font-mono); }
+.footer-label {
+  font-family: var(--font-mono);
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
 
 /* ---- Mobile ---- */
 @media (max-width: 760px) {

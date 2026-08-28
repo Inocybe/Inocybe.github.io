@@ -34,7 +34,7 @@
   const TREE_START_OFFSET = 50;  
   const TREE_MAX_RISE = 300;     
   const TREE_RISE_SPEED = 0.7;
-  const MOUNTAIN_SPEED = 0.08;  
+  const MOUNTAIN_SPEED = 0.01;  
 
   if (preferseReducedMotion || isMobile) {
     return;
