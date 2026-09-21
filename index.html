@@ -17,7 +17,7 @@ title: Home
 
 <section class="project-list">
   {% for project in site.projects %}
-  <a class="project-row" href="{{ project.url | relative_url }}">
+  <a class="project-row" href="{{ project.official_url | relative_url }}">
     <div class="project-info">
       <h2>{{ project.title }}</h2>
       <p class="date">{{ project.date_display }}</p>
