@@ -28,7 +28,7 @@ baseurl: ""
 url: "https://Inocybe.github.io"
 github_url: https://github.com/Inocybe
 linkedin_url: https://www.linkedin.com/in/lev-mitchell-1ba7633b8/
-resume: /assets/Resume-Lev-Mitchell.pdf
+resume: /assets/lev-mitchell-resume.pdf
 
 collections:
   projects:
